@@ -2,6 +2,9 @@
 
 namespace Kobyzeva_Tumakov_hw6
 {
+    /// <summary>
+    /// Банковский счет с генерацией номера
+    /// </summary>
     public class BankAccount2
     {
         private decimal balance;
@@ -23,6 +26,12 @@ namespace Kobyzeva_Tumakov_hw6
             get { return accountType; }
             set { accountType = value; }
         }
+
+        /// <summary>
+        /// Инициализирует новый экземпляр класса и генерирует номер счета.
+        /// </summary>
+        /// <param name="balanceUser">Начальный баланс.</param>
+        /// <param name="typeAccountUser">Тип счета.</param>
         public BankAccount2(decimal balanceUser, AccountType typeAccountUser)
         {
             accountNumberInf++;
@@ -30,6 +39,10 @@ namespace Kobyzeva_Tumakov_hw6
             Balance = balanceUser;
             AccountTypeC = typeAccountUser;
         }
+
+        /// <summary>
+        /// Выводит информацию о банковском счете в консоль
+        /// </summary>
         public void PrintOnConsole()
         {
             Console.WriteLine($"Номер счета: {AccountNumber}\nБаланс: {Balance}\nТип счета: {AccountTypeC}");

@@ -4,6 +4,10 @@ namespace Kobyzeva_Latypova_hw6
 {
     internal class Program
     {
+        /// <summary>
+        /// Работа с объектом алкогольного пива
+        /// </summary>
+        /// <param name="Beer">Объект алкогольного пива</param>
         static bool ActionWithALco(AlcoholicBeerBrewery Beer)
         {
             bool flag = true;
@@ -68,6 +72,10 @@ namespace Kobyzeva_Latypova_hw6
             return true;
         }
 
+        /// <summary>
+        /// Работа с безалкогольным пивом
+        /// </summary>
+        /// <param name="Beer">Объект безалкогольного пива</param>
         static bool ActionWithNonALco(NonAlcoholicBeerBrewery Beer)
         {
             bool flag = true;
@@ -131,6 +139,10 @@ namespace Kobyzeva_Latypova_hw6
             }
             return true;
         }
+
+        /// <summary>
+        /// Задание 1 (Пивоварня), запрос у пользователя данных о пиве и создание объекта
+        /// </summary>
         static void Task1()
         {
             Console.WriteLine("Задание 1. Тема - Пивоварня");

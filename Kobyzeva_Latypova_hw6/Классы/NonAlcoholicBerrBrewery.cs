@@ -1,25 +1,45 @@
 ﻿namespace Kobyzeva_Latypova_hw6.Классы
 {
+    /// <summary>
+    /// Создание объекта безалкогольного пива; методы с данным объектом
+    /// </summary>
     public class NonAlcoholicBeerBrewery : Brewery
     {
         public double SugarContent { get; set; }
+
+        /// <summary>
+        /// Инициализация базового экземпляра класса
+        /// </summary>
         public NonAlcoholicBeerBrewery() : base("Безалкогольное пиво", 0, "Неизвестно")
         {
             SugarContent = 0;
         }
 
+        /// <summary>
+        /// Инициализация экземпляра класса
+        /// </summary>
+        /// <param name="name">Название</param>
+        /// <param name="price">Цена</param>
+        /// <param name="composition">Состав</param>
+        /// <param name="sugar">Содержание сахара</param>
         public NonAlcoholicBeerBrewery(string name, decimal price, string composition, float sugar)
             : base(name, price, composition)
         {
             SugarContent = sugar;
         }
 
+        /// <summary>
+        /// Вывод информации
+        /// </summary>
         public override void PrintInfo()
         {
             base.PrintInfo();
             Console.WriteLine($"Тип: Безалкогольное, сахар: {SugarContent} гр/литр");
         }
 
+        /// <summary>
+        /// Проверка качества по содержанию сахара
+        /// </summary>
         public override void CheckQuality()
         {
             if (SugarContent < 5)
@@ -28,12 +48,18 @@
                 Console.WriteLine($"Проверка '{ProductName}': Много сахара!");
         }
 
+        /// <summary>
+        /// Рассчет суммы акциза
+        /// </summary>
         public override byte CalculateExciseTax()
         {
             Console.WriteLine("0 рублей за литр");
             return 0;
         }
 
+        /// <summary>
+        /// Выполнение экспертизы на содержание алкоголя 
+        /// </summary>
         public void CheckResidualAlcohol()
         {
             Random random = new Random();
@@ -48,6 +74,9 @@
             }
         }
 
+        /// <summary>
+        /// Генерирация и вывод декларацию
+        /// </summary>
         public void DeclarationPreparation()
         {
             Console.WriteLine($"ДЕКЛАРАЦИЯ О СООТВЕТСТВИИ\nТехническому регламенту 'О безопасности жидких разочарований'\n\n" +

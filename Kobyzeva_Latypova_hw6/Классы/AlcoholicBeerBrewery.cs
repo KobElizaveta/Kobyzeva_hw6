@@ -1,25 +1,43 @@
 ﻿namespace Kobyzeva_Latypova_hw6.Классы
 {
+    /// <summary>
+    /// Создание объекта алкогольного пива; методы с данным объектом
+    /// </summary>
     public class AlcoholicBeerBrewery : Brewery
     {
+        
         public double AlcoholPercentage { get; set; }
 
         public AlcoholicBeerBrewery() : base("Алкогольное пиво", 0, "Неизвестно")
         {
             AlcoholPercentage = 0;
         }
+
+        /// <summary>
+        /// Инициализирует экземпляр класса
+        /// </summary>
+        /// <param name="name">Название</param>
+        /// <param name="price">Цена</param>
+        /// <param name="composition">Состав</param>
+        /// <param name="alcoholPercentage">Процент спирта</param>
         public AlcoholicBeerBrewery(string name, decimal price, string composition, float alcoholPercentage)
             : base(name, price, composition)
         {
             AlcoholPercentage = alcoholPercentage;
         }
 
+        /// <summary>
+        /// Вывод информации об алкогольном пиве + его крепость.
+        /// </summary>
         public override void PrintInfo()
         {
             base.PrintInfo();
             Console.WriteLine($"Тип: Алкогольное, крепость: {AlcoholPercentage}%");
         }
 
+        /// <summary>
+        /// Проверка качества пива по крепости
+        /// </summary>
         public override void CheckQuality()
         {
             if (AlcoholPercentage > 0 && AlcoholPercentage < 20)
@@ -32,6 +50,9 @@
             }
         }
 
+        /// <summary>
+        /// Расчет суммы акциза за литр алкогольного пива
+        /// </summary>
         public override byte CalculateExciseTax()
         {
             byte Excise = 0;
@@ -47,6 +68,9 @@
             return Excise;
         }
 
+        /// <summary>
+        /// Генерация и вывод налогового отчёта
+        /// </summary>
         public void GenerateTaxReport()
         {
             string TextTaxReport = "Форма №6767 (Утверждена Министерством Хмеля и Солода)\nОтчет о производстве и обороте алкогольной продукции, а также об исчезновении пива по необъяснимым причинам" +
@@ -58,6 +82,9 @@
             Console.WriteLine(TextTaxReport);
         }
 
+        /// <summary>
+        /// Выполнение экспертизы содержания алкоголя 
+        /// </summary>
         public void CheckAlcoholContent()
         {
             Random random = new Random();

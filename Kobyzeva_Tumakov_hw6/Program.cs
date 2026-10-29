@@ -5,6 +5,9 @@ namespace Kobyzeva_Tumakov_hw6
 {
     internal class Program
     {
+        /// <summary>
+        /// Упражнение 7.1
+        /// </summary>
         static void Task7_1()
         {
             Console.WriteLine("Упражнение 7.1");
@@ -38,7 +41,10 @@ namespace Kobyzeva_Tumakov_hw6
                 }
             }
         }
-        
+
+        /// <summary>
+        /// Запрашивание у пользователя баланса и типа счета, создание счета
+        /// </summary>
         static BankAccount2 EnterInfo()
         {
             Console.WriteLine("Введите данные банковского счета:");
@@ -69,6 +75,10 @@ namespace Kobyzeva_Tumakov_hw6
             }
             return null;
         }
+
+        /// <summary>
+        /// Упражнения 7.2
+        /// </summary>
         static void Task7_2()
         {
             Console.WriteLine("Упражнение 7.2");
@@ -85,6 +95,9 @@ namespace Kobyzeva_Tumakov_hw6
             }
         }
 
+        /// <summary>
+        /// Упражнения 7.3
+        /// </summary>
         static void Task7_3()
         {
             Console.WriteLine("Упражнение 7.3");
@@ -159,12 +172,11 @@ namespace Kobyzeva_Tumakov_hw6
                     Console.WriteLine("Неверно введы данные");
                 }
             }
-            {
-                
-            }
-
         }
 
+        /// <summary>
+        /// Выполнение домашнего задания 7.1
+        /// </summary>
         static void TaskHW()
         {
             Console.WriteLine("Домашнее задание 7.1");

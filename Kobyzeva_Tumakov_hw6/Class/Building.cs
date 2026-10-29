@@ -1,5 +1,8 @@
 ﻿namespace Kobyzeva_Tumakov_hw6.Class
 {
+    /// <summary>
+    /// Здания с методами для расчета его параметров
+    /// </summary>
     public class Building
     {
         private static int number0 = 0;
@@ -29,6 +32,14 @@
             get { return entrances; }
             set { entrances = value; }
         }
+
+        /// <summary>
+        /// Инициализирует экземпляр класса и присваивает ему уникальный порядковый номер
+        /// </summary>
+        /// <param name="high">Высота здания</param>
+        /// <param name="floors">Количество этажей</param>
+        /// <param name="apartaments">Количество квартир</param>
+        /// <param name="entrances">Количество подъездов</param>
         public Building(float high, byte floors, int apartaments, byte entrances)
         {
             number0++;
@@ -39,25 +50,41 @@
             Entrances = entrances;
         }
 
+        /// <summary>
+        /// Вывод информации о здании в консоль
+        /// </summary>
         public void PrintOnConsole()
         {
             Console.WriteLine($"Уникальный номер: {number}, высота: {High}, этажность: {Floors}, количество квартир: {Apartaments}, подъездов: {Entrances}");
         }
 
+        /// <summary>
+        /// Вычисление примерной высоты одного этажа
+        /// </summary>
         public float FLoorHeight()
         {
             return (float)High / Floors;
         }
 
+        /// <summary>
+        /// Вычисление среднего количества квартир в одном подъезде.
+        /// </summary>
         public float AppartamentsPerEntrance()
         {
             return (float)Apartaments / Entrances;
         }
 
+        /// <summary>
+        /// Вычисление среднего количества квартир на одном этаже
+        /// </summary>
         public float ApartamentsPerFloor()
         {
             return (float)Apartaments / Floors;
         }
+
+        /// <summary>
+        /// Вычисление среднего количества квартир на одной лестничной площадке
+        /// </summary>
         public float AppartamentsPerLanding()
         {
             return (float)Apartaments / Floors / Entrances;

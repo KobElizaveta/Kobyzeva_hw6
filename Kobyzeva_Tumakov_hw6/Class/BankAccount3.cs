@@ -2,6 +2,9 @@
 
 namespace Kobyzeva_Tumakov_hw6
 {
+    /// <summary>
+    /// Банковский счет с методами пополнения и снятия средств
+    /// </summary>
     public class BankAccount3
     {
         private decimal balance;
@@ -23,6 +26,12 @@ namespace Kobyzeva_Tumakov_hw6
             get { return accountType; }
             set { accountType = value; }
         }
+
+        /// <summary>
+        /// Инициализирует экземпляр класса с автоматической генерацией номера
+        /// </summary>
+        /// <param name="balanceUser">Начальный баланс.</param>
+        /// <param name="typeAccountUser">Тип счета.</param>
         public BankAccount3(decimal balanceUser, AccountType typeAccountUser)
         {
             accountNumberInf++;
@@ -30,11 +39,19 @@ namespace Kobyzeva_Tumakov_hw6
             Balance = balanceUser;
             AccountTypeC = typeAccountUser;
         }
+
+        /// <summary>
+        /// Выводит информацию о счете в консоль
+        /// </summary>
         public void PrintOnConsole()
         {
             Console.WriteLine($"Номер счета: {AccountNumber}\nБаланс: {Balance}\nТип счета: {AccountTypeC}");
         }
 
+        /// <summary>
+        /// Пополнение баланса
+        /// </summary>
+        /// <param name="sum">Сумма для пополнения.</param>
         public bool Deposit(decimal sum)
         {
             try
@@ -45,6 +62,10 @@ namespace Kobyzeva_Tumakov_hw6
             catch {  return false; }
         }
 
+        /// <summary>
+        /// Снятие средств
+        /// </summary>
+        /// <param name="sum">Сумма для снятия</param>
         public bool Withdrawal(decimal sum)
         {
             try
